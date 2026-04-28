@@ -150,7 +150,8 @@ Mata Pelajaran Default: ${mapel}
 
         // Fungsi API Call ke Gemini dengan API Key User
         async function fetchWithRetry(payload, userKey, maxRetries = 5) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${userKey}`;
+            // PERUBAHAN DI SINI: Menggunakan gemini-2.0-flash yang mendukung publik secara luas
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${userKey}`;
             const delays = [1000, 2000, 4000, 8000, 16000];
 
             for (let i = 0; i < maxRetries; i++) {
